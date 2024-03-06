@@ -1,0 +1,82 @@
+/* AdminFarmers.css */
+
+/* Container styling */
+.retailer-container {
+    margin: 30px;
+    width: 100%;
+    height: 100%;
+    max-height: 650px;
+    overflow-y: auto;
+  }
+  
+  /* Heading styling */
+  .retailer-container h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  /* Table styling */
+  .retailer-table {
+    width: 97%;
+    border-collapse: collapse;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  
+  /* Table header cell styling */
+  .retailer-table th {
+    background-color: #f0f0f0;
+    color: #333;
+    font-weight: 600;
+    padding: 12px;
+    text-align: left;
+    border: 1px solid #ddd;
+  }
+  
+  /* Table body cell styling */
+  .retailer-table td {
+    padding: 12px;
+    border: 1px solid #ddd;
+  }
+  
+  /* Alternating row background colors */
+  .retailer-table tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+  
+  /* Hover effect on table rows */
+  .retailer-table tbody tr:hover {
+    background-color: #f0f0f0;
+  }
+  
+  /* AdminRetailers.css */
+
+.search-bar {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    margin-left: -30px;
+  }
+  
+  .search-bar input {
+    padding: 8px;
+    margin-right: 100px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .search-bar button {
+    padding: 8px 16px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-right: 100px;
+  }
+  
+  .search-bar button:hover {
+    background-color: #0056b3;
+  }
+  
