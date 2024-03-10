@@ -1,5 +1,5 @@
 import React from 'react';
-import { Routes, Route, Outlet } from 'react-router-dom';
+import { Routes, Route, Navigate, Outlet } from 'react-router-dom';
 import SideBar from '../components/SideBar';
 import '../Sidebar.css';
 import '../AdminDashboard.css';
@@ -17,15 +17,18 @@ const AdminLayout = () => {
       <div className='content'>
         {/* Nested routes for admin section */}
         <Routes>
-          <Route path="/adminlayout/dashboard" element={<AdminDashboard />} />
-          <Route path="/adminlayout/products" element={<AdminProducts />} />
-          <Route path="/adminlayout/retailerdata" element={<AdminRetailers />} />
-          <Route path="/adminlayout/farmerdata" element={<AdminFarmers />} />
-          <Route path="/adminlayout/addproduct" element={<AdminNewProduct />} />
-          <Route path="/adminlayout/profile" element={<AdminProfile/>}/>
+          {/* Default route for /adminlayout */}
+          <Route path="/" element={<Navigate to="dashboard" />} />
+          {/* Route for AdminDashboard */}
+          <Route path="/dashboard" element={<AdminDashboard />} />
+          {/* Other routes */}
+          <Route path="/products" element={<AdminProducts />} />
+          <Route path="/retailerdata" element={<AdminRetailers />} />
+          <Route path="/farmerdata" element={<AdminFarmers />} />
+          <Route path="/addproduct" element={<AdminNewProduct />} />
+          <Route path="/profile" element={<AdminProfile />} />
         </Routes>
         <Outlet/>
-        
       </div>
     </div> 
   );

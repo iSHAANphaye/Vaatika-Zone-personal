@@ -229,6 +229,46 @@ const products = [
     inStock: "5 kg",
     price: "28/kg",
   },
+  {
+    id: 3,
+    name: "Tomato",
+    category: "Vegetable",
+    image: tomato,
+    inStock: "5 kg",
+    price: "28/kg",
+  },
+  {
+    id: 3,
+    name: "Tomato",
+    category: "Vegetable",
+    image: tomato,
+    inStock: "5 kg",
+    price: "28/kg",
+  },
+  {
+    id: 2,
+    name: "Banana",
+    category: "Fruit",
+    image: banana,
+    inStock: "15 kg",
+    price: "30/kg",
+  },
+  {
+    id: 2,
+    name: "Banana",
+    category: "Fruit",
+    image: banana,
+    inStock: "15 kg",
+    price: "30/kg",
+  },
+  {
+    id: 2,
+    name: "Banana",
+    category: "Fruit",
+    image: banana,
+    inStock: "15 kg",
+    price: "30/kg",
+  },
   // Add more products as needed
 ];
 
@@ -316,26 +356,26 @@ const RetailerProducts = () => {
           <button onClick={handleSearch}>Search</button>
         </div>
       </div>
-      <div className="product-container">
+      <div className="retailer-product-container">
         {filteredAndSortedProducts.map((product) => (
-          <div className="product-card" key={product.id}>
+          <div className="retailer-product-card" key={product.id}>
             <img src={product.image} alt={product.name} className="product-image" />
-            <div className="product-details">
-              <h3 className="product-name">{product.name}</h3>
-              <p className="product-category">Category: {product.category}</p>
-              <p className="product-stock">In Stock: {product.inStock}</p>
-              <p className="product-price">Price: Rs.{product.price}</p>
+            <div className="retailer-product-details">
+              <h3 className="retailer-product-name">{product.name}</h3>
+              <p className="retailer-product-category">Category: {product.category}</p>
+              <p className="retailer-product-stock">In Stock: {product.inStock}</p>
+              <p className="retailer-product-price">Price: Rs.{product.price}</p>
             </div>
             {/* Render filled heart icon if product is in favorites, otherwise render outlined heart */}
             {favorites.includes(product.id) ? (
               <AiFillHeart
-                className="favorite-icon"
+                className="retailer-favorite-icon"
                 onClick={() => toggleFavorite(product.id)}
                 style={{ color: 'red' }}
               />
             ) : (
               <AiOutlineHeart
-                className="favorite-icon"
+                className="retailer-favorite-icon"
                 onClick={() => toggleFavorite(product.id)}
               />
             )}

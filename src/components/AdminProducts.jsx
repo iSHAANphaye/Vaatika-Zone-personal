@@ -50,7 +50,7 @@ const AdminProducts = () => {
   const filteredAndSortedProducts = sortProducts(filterProducts(productsData));
 
   return (
-    <div className="product-container">
+    <div className="products-container">
       <h2>List of Products</h2>
       {/* Filter and search bar */}
       <div className="filter-search-bar">
@@ -76,7 +76,7 @@ const AdminProducts = () => {
         </div>
       </div>
       {/* Table */}
-      <table className="product-table">
+      <table className="products-table">
         <thead>
           <tr>
             <th>S.No.</th>

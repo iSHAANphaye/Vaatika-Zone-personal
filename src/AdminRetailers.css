@@ -56,7 +56,8 @@
     display: flex;
     align-items: center;
     margin-bottom: 20px;
-    margin-left: -30px;
+    margin-left: 5px;
+    margin-right: 10px;
   }
   
   .search-bar input {
@@ -74,6 +75,7 @@
     border-radius: 4px;
     cursor: pointer;
     margin-right: 100px;
+    margin-left: -70px;
   }
   
   .search-bar button:hover {
