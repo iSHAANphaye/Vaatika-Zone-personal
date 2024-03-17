@@ -22,7 +22,7 @@ const AdminNewProduct = () => {
     e.preventDefault();
     try {
       const response = await fetch(
-        "https://j37nyv-5000.csb.app/api/addAdminProduct",
+        "https://vaatiika-zone-backend.onrender.com/api/addAdminProduct",
         {
           method: "POST",
           headers: {

@@ -10,7 +10,7 @@ const AdminRetailers = () => {
     const fetchRetailers = async () => {
       try {
         const response = await fetch(
-          "https://j37nyv-5000.csb.app/api/getAllRetailers",
+          "https://vaatiika-zone-backend.onrender.com/api/getAllRetailers",
         );
         if (response.ok) {
           const data = await response.json();

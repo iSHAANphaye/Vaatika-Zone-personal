@@ -17,7 +17,7 @@ const FarmerProducts = () => {
       try {
         const farmerId = parseInt(sessionStorage.getItem("farmerId"), 10);
         console.log("Farmer ID from sessionStorage:", farmerId);
-        const url = `https://j37nyv-5000.csb.app/api/getFarmerProducts?farmerId=${farmerId}`;
+        const url = `https://vaatiika-zone-backend.onrender.com/api/getFarmerProducts?farmerId=${farmerId}`;
 
         const response = await fetch(
           url,

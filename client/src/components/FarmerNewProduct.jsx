@@ -21,7 +21,7 @@ const FarmerNewProduct = () => {
     e.preventDefault();
     try {
       const farmerId = parseInt(sessionStorage.getItem("farmerId"), 10);
-      const url = `https://j37nyv-5000.csb.app/api/addFarmerProduct?farmerId=${farmerId}`;
+      const url = `https://vaatiika-zone-backend.onrender.com/api/addFarmerProduct?farmerId=${farmerId}`;
       const response = await fetch(url, {
         method: "POST",
         headers: {

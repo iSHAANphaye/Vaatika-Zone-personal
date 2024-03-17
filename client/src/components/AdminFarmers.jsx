@@ -11,7 +11,7 @@ const AdminFarmers = () => {
     const fetchFarmers = async () => {
       try {
         const response = await fetch(
-          "https://j37nyv-5000.csb.app/api/getAllFarmers",
+          "https://vaatiika-zone-backend.onrender.com/api/getAllFarmers",
         );
         if (response.ok) {
           const data = await response.json();

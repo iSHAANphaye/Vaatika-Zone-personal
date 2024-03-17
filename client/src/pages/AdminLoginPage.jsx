@@ -29,7 +29,7 @@ const AdminLoginPage = () => {
     e.preventDefault();
     try {
       const response = await fetch(
-        "https://j37nyv-5000.csb.app/api/adminLogin",
+        "https://vaatiika-zone-backend.onrender.com/api/adminLogin",
         {
           method: "POST",
           headers: {

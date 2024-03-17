@@ -31,7 +31,7 @@ const RetailerProfile = () => {
     e.preventDefault();
     try {
       const retailerId = parseInt(sessionStorage.getItem("retailerId"), 10);
-      const url = `https://j37nyv-5000.csb.app/api/editRetailerProfile?retailerId=${retailerId}`;
+      const url = `https://vaatiika-zone-backend.onrender.com/api/editRetailerProfile?retailerId=${retailerId}`;
       const response = await fetch(url, {
         method: "PUT",
         headers: {

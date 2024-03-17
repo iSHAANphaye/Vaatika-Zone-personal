@@ -76,7 +76,7 @@ const FarmerProfile = () => {
     // Send a request to the backend to delete the user's profile
     const farmerId = parseInt(sessionStorage.getItem("farmerId"), 10);
     fetch(
-      `https://j37nyv-5000.csb.app/api/deleteFarmerProfile?farmerId=${farmerId}`,
+      `https://vaatiika-zone-backend.onrender.com/api/deleteFarmerProfile?farmerId=${farmerId}`,
     )
       .then((response) => {
         if (response.ok) {

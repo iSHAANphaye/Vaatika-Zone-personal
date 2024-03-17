@@ -13,7 +13,7 @@ const AdminProducts = () => {
     const fetchProducts = async () => {
       try {
         const response = await fetch(
-          "https://j37nyv-5000.csb.app/api/getAllProducts",
+          "https://vaatiika-zone-backend.onrender.com/api/getAllProducts",
         ); // Replace with your backend API endpoint
         if (response.ok) {
           const data = await response.json();

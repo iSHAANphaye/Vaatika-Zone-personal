@@ -31,7 +31,7 @@ const AdminProfile = () => {
     e.preventDefault();
     try {
       const adminId = parseInt(sessionStorage.getItem("adminId"), 10);
-      const url = `https://j37nyv-5000.csb.app/api/editAdminProfile?adminId=${adminId}`;
+      const url = `https://vaatiika-zone-backend.onrender.com/api/editAdminProfile?adminId=${adminId}`;
       const response = await fetch(url, {
         method: "PUT",
         headers: {
