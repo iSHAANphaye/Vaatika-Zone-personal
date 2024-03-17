@@ -1,0 +1,271 @@
+.App {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.Sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 280px;
+  background-color: rgb(214, 250, 227);
+  border-right: 1px solid #ddd;
+  overflow-y: auto;
+}
+
+.Sidebar::-webkit-scrollbar {
+  display: none;
+}
+
+.SidebarList {
+  padding: 0;
+  margin: 0;
+}
+
+.SidebarList .row {
+  height: 60px;
+  list-style-type: none;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.SidebarList .row:hover {
+  background-color: #e6f7ef;
+}
+
+.row #icon {
+  width: 30%;
+  text-align: center;
+  padding: 0 5px; /* Add space around the icon */
+}
+
+.row #title {
+  width: 30%; /* Adjust width for title */
+  text-align: left; /* Align text to the left */
+  font-size: 16px;
+  margin-left: 10px; /* Add space between icon and title */
+}
+
+.link {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: inherit;
+  padding: 10px;
+  transition: background-color 0.3s;
+}
+
+.link:hover {
+  background-color: #e6f7ef;
+}
+
+.SidebarList .active {
+  background-color: #e6f7ef;
+  color: #74c734;
+}
+
+/* CSS for user info section */
+.sidebar-user-info {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+}
+
+.sidebar-user-image img {
+  width: 70px; /* Adjust the width and height as needed */
+  height: 70px;
+  border-radius: 50%; /* Make the image circular */
+  object-fit: cover; /* Maintain aspect ratio */
+  margin-right: 10px;
+}
+
+.sidebar-welcome-message {
+  font-weight: bold;
+}
+
+/* CSS for logout button */
+.logout-button {
+  margin-top: auto; /* Push the logout button to the bottom of the sidebar */
+  padding: 10px;
+  margin-top: 5px;
+  margin-right: 20px;
+  margin-left: 20px;
+  margin-bottom: 10px;
+}
+
+.logout-button button {
+  width: 100%;
+  padding: 10px;
+  background-color: rgb(16, 185, 129);
+  color: white;
+  border: 1px solid #ddd;
+  cursor: pointer;
+}
+
+.logout-button button:hover {
+  background-color: #227956;
+  color: white;
+}
+
+.sidebar-menu-icon {
+  display: none;
+  filter: invert(100%);
+  width: 30px;
+  align-items: center;
+  padding: 0 5px; /* Add space around the icon */
+  margin-left: 5px;
+}
+@media (max-width: 920px) {
+  .Sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 200px;
+    background-color: rgb(214, 250, 227);
+    border-right: 1px solid #ddd;
+    overflow-y: auto;
+  }
+}
+
+@media (max-width: 863px) {
+  .Sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 200px;
+    background-color: rgb(214, 250, 227);
+    border-right: 1px solid #ddd;
+    overflow-y: auto;
+  }
+}
+
+/* Media query for small screens */
+@media (max-width: 768px) {
+  .Sidebar {
+    display: block; /* Show the sidebar for small screens */
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 40px;
+    background-color: rgb(214, 250, 227);
+    border-right: 1px solid #ddd;
+    overflow-y: auto;
+    transition: transform 0.3s ease;
+    z-index: 999;
+  }
+  .sidebar-user-info {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+  }
+  .sidebar-user-image img {
+    display: none;
+    width: 50px;
+    height: 50px;
+    border-radius: 70%; /* Make the image circular */
+    object-fit: cover; /* Maintain aspect ratio */
+    margin-right: 10px;
+  }
+  .row #icon {
+    width: 20%;
+    text-align: center;
+    padding: 0 5px; /* Add space around the icon */
+    margin-left: -7px;
+  }
+  .row #title {
+    display: none;
+    width: 30%; /* Adjust width for title */
+    text-align: left; /* Align text to the left */
+    font-size: 16px;
+    margin-left: 10px; /* Add space between icon and title */
+  }
+  .sidebar-welcome-message {
+    display: none;
+    font-weight: bold;
+  }
+  .sidebar-logout-icon {
+    margin-top: 10px;
+    margin-left: -20px;
+  }
+  .sidebar-menu-icon {
+    display: flex;
+    filter: invert(100%);
+    width: 30px;
+    align-items: center;
+    padding: 0 5px; /* Add space around the icon */
+    margin-left: 5px;
+    margin-top: 10px;
+  }
+}
+
+/* Media query for small screens */
+@media (max-width: 900px) {
+  .Retailer-Sidebar {
+    display: block; /* Show the sidebar for small screens */
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 40px;
+    background-color: rgb(214, 250, 227);
+    border-right: 1px solid #ddd;
+    overflow-y: auto;
+    transition: transform 0.3s ease;
+    z-index: 999;
+  }
+  .Retailer-sidebar-user-info {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+  }
+  .Retailer-sidebar-user-image img {
+    display: none;
+    width: 50px;
+    height: 50px;
+    border-radius: 70%; /* Make the image circular */
+    object-fit: cover; /* Maintain aspect ratio */
+    margin-right: 10px;
+  }
+  .Retailer-row #icon {
+    width: 20%;
+    text-align: center;
+    padding: 0 5px; /* Add space around the icon */
+    margin-left: -7px;
+  }
+  .Retailer-row #title {
+    display: none;
+    width: 30%; /* Adjust width for title */
+    text-align: left; /* Align text to the left */
+    font-size: 16px;
+    margin-left: 10px; /* Add space between icon and title */
+  }
+  .Retailer-sidebar-welcome-message {
+    display: none;
+    font-weight: bold;
+  }
+  .Retailer-sidebar-logout-icon {
+    margin-top: 10px;
+    margin-left: -20px;
+  }
+  .Retailer-sidebar-menu-icon {
+    display: flex;
+    filter: invert(100%);
+    width: 30px;
+    align-items: center;
+    padding: 0 5px; /* Add space around the icon */
+    margin-left: 5px;
+    margin-top: 10px;
+  }
+}

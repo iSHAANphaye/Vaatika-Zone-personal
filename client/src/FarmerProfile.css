@@ -1,0 +1,132 @@
+/* farmerProfile.css */
+
+.farmer-profile {
+  width: 55%;
+  margin: auto;
+  padding: 20px;
+  background-color: #f8f9fa;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-height: 100vh;
+  max-width: 150vh;
+  overflow-y: auto;
+}
+.farmer-profile::-webkit-scrollbar {
+  display: none;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.user-image img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 20px;
+}
+
+.welcome-message {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="tel"],
+.form-group input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.form-group input[type="file"] {
+  margin-top: 10px;
+}
+
+.profile-details {
+  margin-bottom: 10px;
+}
+
+.password-field {
+  position: relative;
+}
+
+.eye-icon {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+
+button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+button.edit-button {
+  background-color: #3498db;
+  color: #fff;
+}
+
+button.delete-button {
+  background-color: #e74c3c;
+  color: #fff;
+}
+
+button.save-button {
+  background-color: #2ecc71;
+  color: #fff;
+}
+
+button.edit-button:hover {
+  background-color: #2980b9;
+}
+
+button.delete-button:hover {
+  background-color: #c0392b;
+}
+
+button.save-button:hover {
+  background-color: #27ae60;
+}
+
+/* farmerProfile.css */
+
+/* Other styles... */
+
+.button-group {
+  display: flex;
+  justify-content: flex-start;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.button-group button {
+  margin-right: 10px;
+}
+
+.button-group button:last-child {
+  margin-right: 0;
+}

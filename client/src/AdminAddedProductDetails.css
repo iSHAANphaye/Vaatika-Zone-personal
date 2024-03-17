@@ -1,0 +1,88 @@
+.product-card {
+  display: flex;
+  flex-direction: column; /* Make the flex items stack vertically */
+  justify-content: center; /* Align items vertically in the center */
+  align-items: center; /* Align items horizontally in the center */
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease;
+  margin-left: 450px; /* Center the card horizontally */
+  margin-right: 50px; /* Center the card horizontally */
+  margin-top: 30px;
+  width: 900px;
+  height: 650px; /* Adjust width as needed */
+}
+
+.product-image {
+  width: 340px;
+  height: 340px;
+  background-color: #eee;
+  flex-shrink: 0;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.product-details {
+  padding: 10px;
+}
+
+.product-name {
+  font-size: 20px;
+  margin: 0;
+}
+
+.product-category,
+.product-description,
+.product-quantity,
+.product-price,
+.listing-date,
+.listed-by {
+  margin: 10px 0;
+}
+
+.product-category::before {
+  content: "Category: ";
+  font-weight: bold;
+}
+
+.product-description::before {
+  content: "Description: ";
+  font-weight: bold;
+}
+
+.product-quantity::before {
+  content: "Quantity: ";
+  font-weight: bold;
+}
+
+.product-price::before {
+  content: "Price: ";
+  font-weight: bold;
+}
+.listing-date::before {
+  content: "Listing Date: ";
+  font-weight: bold;
+}
+.listed-by::before {
+  content: "Listed By: ";
+  font-weight: bold;
+}
+
+.remove-product-btn {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #ff6347;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-bottom: 10px;
+  margin-top: -13px;
+}
+
+.remove-product-btn:hover {
+  background-color: #e74c3c;
+}
