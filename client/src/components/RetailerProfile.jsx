@@ -76,7 +76,7 @@ const RetailerProfile = () => {
     // Send a request to the backend to delete the user's profile
     const retailerId = parseInt(sessionStorage.getItem("retailerId"), 10);
     fetch(
-      `https://j37nyv-5000.csb.app/api/deleteRetailerProfile?retailerId=${retailerId}`,
+      `https://vaatiika-zone-backend.onrender.com/api/deleteRetailerProfile?retailerId=${retailerId}`,
     )
       .then((response) => {
         if (response.ok) {
