@@ -46,7 +46,8 @@ const FarmerProfile = () => {
         sessionStorage.setItem("farmerAddress", profileData.address);
         sessionStorage.setItem("farmerPassword", profileData.password);
         console.log("Farmer Profile Update Successful:", farmerId);
-        window.location.reload();
+        // window.location.reload();
+        setEditMode(false);
         // Clear form data
       } else {
         console.error("Failed to edit profile:", response.statusText);

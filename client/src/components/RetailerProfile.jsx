@@ -46,7 +46,8 @@ const RetailerProfile = () => {
         sessionStorage.setItem("retailerAddress", profileData.address);
         sessionStorage.setItem("retailerPassword", profileData.password);
         console.log("Retailer Profile Update Successful:", retailerId);
-        window.location.reload();
+        // window.location.reload();
+        setEditMode(false);
         // Clear form data
       } else {
         console.error("Failed to edit profile:", response.statusText);

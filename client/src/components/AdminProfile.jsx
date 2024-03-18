@@ -46,7 +46,8 @@ const AdminProfile = () => {
         sessionStorage.setItem("adminAddress", profileData.address);
         sessionStorage.setItem("adminPassword", profileData.password);
         console.log("Admin Profile Update Successful:", adminId);
-        window.location.reload();
+        // window.location.reload();
+        setEditMode(false);
         // Clear form data
       } else {
         console.error("Failed to edit profile:", response.statusText);
