@@ -8,7 +8,7 @@
   overflow: hidden;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   transition: box-shadow 0.3s ease;
-  margin-left: 450px; /* Center the card horizontally */
+  margin-left: 1000px; /* Center the card horizontally */
   margin-right: 50px; /* Center the card horizontally */
   margin-top: 30px;
   width: 900px;
@@ -22,10 +22,12 @@
   flex-shrink: 0;
   align-items: center;
   margin-top: 20px;
+  margin-left: 600px;
 }
 
 .product-details {
   padding: 10px;
+  margin-left: 600px;
 }
 
 .product-name {
@@ -81,8 +83,294 @@
   transition: background-color 0.3s ease;
   margin-bottom: 10px;
   margin-top: -13px;
+  margin-left: 600px;
 }
 
 .remove-product-btn:hover {
   background-color: #e74c3c;
+}
+
+.edit-product-btn {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #35ef35;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-bottom: 10px;
+  margin-top: -13px;
+  margin-left: 600px;
+}
+
+.edit-product-btn:hover {
+  background-color: #10d21a;
+}
+
+@media (max-width: 1000px) {
+  .product-card {
+    display: none;
+    flex-direction: column; /* Make the flex items stack vertically */
+    justify-content: center; /* Align items vertically in the center */
+    align-items: center; /* Align items horizontally in the center */
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
+    margin-left: -200px; /* Center the card horizontally */
+    margin-right: 100px; /* Center the card horizontally */
+    margin-top: 30px;
+    width: 300px;
+    height: 400px; /* Adjust width as needed */
+  }
+
+  .product-image {
+    width: 340px;
+    height: 340px;
+    background-color: #eee;
+    flex-shrink: 0;
+    align-items: center;
+    margin-top: 20px;
+    margin-left: 300px;
+  }
+
+  .product-details {
+    padding: 10px;
+    margin-left: 300px;
+  }
+  .remove-product-btn {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #ff6347;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-bottom: 10px;
+    margin-top: -13px;
+    margin-left: 300px;
+  }
+  .edit-product-btn {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #35ef35;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-bottom: 10px;
+    margin-top: -13px;
+    margin-left: 300px;
+  }
+}
+
+@media (max-width: 864px) {
+  .product-card {
+    display: flex;
+    flex-direction: column; /* Make the flex items stack vertically */
+    justify-content: center; /* Align items vertically in the center */
+    align-items: center; /* Align items horizontally in the center */
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
+    margin-left: 450px; /* Center the card horizontally */
+    margin-right: 50px; /* Center the card horizontally */
+    margin-top: 30px;
+    width: 900px;
+    height: 650px; /* Adjust width as needed */
+  }
+}
+
+@media (max-width: 768px) {
+  .product-card {
+    display: flex;
+    flex-direction: column; /* Make the flex items stack vertically */
+    justify-content: center; /* Align items vertically in the center */
+    align-items: center; /* Align items horizontally in the center */
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
+    margin-left: 450px; /* Center the card horizontally */
+    margin-right: 50px; /* Center the card horizontally */
+    margin-top: 30px;
+    width: 900px;
+    height: 650px; /* Adjust width as needed */
+  }
+  .product-image {
+    width: 340px;
+    height: 340px;
+    background-color: #eee;
+    flex-shrink: 0;
+    align-items: center;
+    margin-top: 20px;
+    margin-left: 100px;
+  }
+
+  .product-details {
+    padding: 10px;
+    margin-left: 100px;
+  }
+  .remove-product-btn {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #ff6347;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-bottom: 10px;
+    margin-top: -13px;
+    margin-left: 100px;
+  }
+  .edit-product-btn {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #35ef35;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-bottom: 10px;
+    margin-top: -13px;
+    margin-left: 100px;
+  }
+}
+
+@media (max-width: 640px) {
+  .product-card {
+    display: flex;
+    flex-direction: column; /* Make the flex items stack vertically */
+    justify-content: center; /* Align items vertically in the center */
+    align-items: center; /* Align items horizontally in the center */
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
+    margin-left: 450px; /* Center the card horizontally */
+    margin-right: 50px; /* Center the card horizontally */
+    margin-top: 30px;
+    width: 900px;
+    height: 650px; /* Adjust width as needed */
+  }
+  .product-image {
+    width: 250px;
+    height: 250px;
+    background-color: #eee;
+    flex-shrink: 0;
+    align-items: center;
+    margin-top: 20px;
+    margin-left: 60px;
+  }
+
+  .product-details {
+    padding: 10px;
+    margin-left: 60px;
+  }
+  .remove-product-btn {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #ff6347;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-bottom: 10px;
+    margin-top: -13px;
+    margin-left: 60px;
+  }
+  .edit-product-btn {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #35ef35;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-bottom: 10px;
+    margin-top: -13px;
+    margin-left: 60px;
+  }
+}
+@media (max-width: 436px) {
+  .product-image {
+    width: 100px;
+    height: 100px;
+    background-color: #eee;
+    flex-shrink: 0;
+    align-items: center;
+    margin-top: 20px;
+    margin-left: 60px;
+  }
+}
+@media (max-width: 360px) {
+  .product-card {
+    display: flex;
+    flex-direction: column; /* Make the flex items stack vertically */
+    justify-content: center; /* Align items vertically in the center */
+    align-items: center; /* Align items horizontally in the center */
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
+    margin-left: 450px; /* Center the card horizontally */
+    margin-right: 50px; /* Center the card horizontally */
+    margin-top: 30px;
+    width: 900px;
+    height: 650px; /* Adjust width as needed */
+  }
+  .product-image {
+    width: 60px;
+    height: 60px;
+    background-color: #eee;
+    flex-shrink: 0;
+    align-items: center;
+    margin-top: 20px;
+    margin-left: 60px;
+    margin-right: 100px;
+  }
+
+  .product-details {
+    padding: 10px;
+    margin-left: 40px;
+  }
+  .remove-product-btn {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #ff6347;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-bottom: 10px;
+    margin-top: -13px;
+    margin-left: 60px;
+  }
+  .edit-product-btn {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #35ef35;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-bottom: 10px;
+    margin-top: -13px;
+    margin-left: 60px;
+  }
 }

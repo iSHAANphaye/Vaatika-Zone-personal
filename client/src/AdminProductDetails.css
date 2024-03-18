@@ -14,58 +14,94 @@
   width: 900px;
   height: 650px; /* Adjust width as needed */
 }
-  
-  .product-image {
-    width: 350px;
-    height: 350px;
-    background-color: #eee;
-    flex-shrink: 0;
-    align-items: center;
-    margin-top: 20px;
-  }
-  
-  .product-details {
-    padding: 10px;
-  }
-  
-  .product-name {
-    font-size: 20px;
-    margin: 0;
-  }
-  
-  .product-category,
-  .product-description,
-  .product-quantity,
-  .product-price,
-  .listing-date, 
-  .listed-by{
-    margin: 10px 0;
-  }
-  
-  .product-category::before {
-    content: "Category: ";
-    font-weight: bold;
-  }
-  
-  .product-description::before {
-    content: "Description: ";
-    font-weight: bold;
-  }
-  
-  .product-quantity::before {
-    content: "Quantity: ";
-    font-weight: bold;
-  }
-  
-  .product-price::before {
-    content: "Price: ";
-    font-weight: bold;
-  }
-  .listing-date::before {
-    content: "Listing Date: ";
-    font-weight: bold;
-  }
-  .listed-by::before {
-    content: "Listed By: ";
-    font-weight: bold;
-  }
+
+.product-image {
+  width: 350px;
+  height: 350px;
+  background-color: #eee;
+  flex-shrink: 0;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.product-details {
+  padding: 10px;
+}
+
+.product-name {
+  font-size: 20px;
+  margin: 0;
+}
+
+.product-category,
+.product-description,
+.product-quantity,
+.product-price,
+.listing-date,
+.listed-by {
+  margin: 10px 0;
+}
+
+.product-category::before {
+  content: "Category: ";
+  font-weight: bold;
+}
+
+.product-description::before {
+  content: "Description: ";
+  font-weight: bold;
+}
+
+.product-quantity::before {
+  content: "Quantity: ";
+  font-weight: bold;
+}
+
+.product-price::before {
+  content: "Price: ";
+  font-weight: bold;
+}
+.listing-date::before {
+  content: "Listing Date: ";
+  font-weight: bold;
+}
+.listed-by::before {
+  content: "Listed By: ";
+  font-weight: bold;
+}
+
+.admin-remove-product-btn {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #ff6347;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-bottom: 10px;
+  margin-top: -13px;
+  margin-left: 20px;
+}
+.order-quantity::before {
+  content: "Order Quantity: ";
+  font-weight: bold;
+}
+
+.retailer-edit-product-btn {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #35ef35;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-bottom: 10px;
+  margin-top: 20px;
+  margin-left: 30px;
+}
+
+.retailer-edit-product-btn:hover {
+  background-color: #10d21a;
+}

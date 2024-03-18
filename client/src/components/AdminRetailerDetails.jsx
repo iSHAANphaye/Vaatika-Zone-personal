@@ -114,7 +114,7 @@ const AdminRetailerDetails = () => {
         </div>
       </div>
       <div className="wishlist-table">
-        <h3>Wishlisted Products</h3>
+        <h3>Ordered Products</h3>
         <table>
           <thead>
             <tr>

@@ -45,10 +45,18 @@ const App = () => (
           <Route path="addadminproduct" element={<AdminNewProduct />} />
           <Route path="profile" element={<AdminProfile />} />
           <Route path="product/:productId" element={<AdminProductDetails />} />
-          <Route path="farmerprofile/:farmerId" element={<FarmerProfile />} />
+          {/* <Route path="farmerprofile/:farmerId" element={<FarmerProfile />} /> */}
           <Route
+            path="farmerprofile/:farmerId"
+            element={<AdminFarmerDetails />}
+          />
+          {/* <Route
             path="retailerprofile/:retailerId"
             element={<RetailerProfile />}
+          /> */}
+          <Route
+            path="retailerprofile/:retailerId"
+            element={<AdminRetailerDetails />}
           />
           <Route
             path="addedproducts/:productId"

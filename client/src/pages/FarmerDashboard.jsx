@@ -19,11 +19,11 @@ const FarmerDashboard = () => {
           {/* <Route path="/products" element={<FarmerProducts />} /> */}
           {/* Other routes */}
           {/* <Route path="/addfarmerproduct" element={<FarmerNewProduct />} /> */}
-          <Route path="/profile" element={<FarmerProfile />} />
-          <Route
+          {/* <Route path="/profile" element={<FarmerProfile />} /> */}
+          {/* <Route
             path="/farmerproductdetails/:productId"
             element={<FarmerProductDetails />}
-          />
+          /> */}
         </Routes>
         <Outlet />
       </div>

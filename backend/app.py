@@ -22,19 +22,24 @@ connection = pymysql.connect(
     write_timeout=timeout,
 )
 
-@app.route('/api/deleteFarmerProfile')
+@app.route('/api/deleteFarmerProfile', methods=['GET'])
 def delete_farmer_profile():
     try:
         farmerId = int(request.args.get('farmerId'))
         print(farmerId)
         with connection.cursor() as cursor:
-            cursor.execute("DELETE FROM admin_farmer_details WHERE farmer_id = %s", (farmerId))
+            # cursor.execute('SELECT * FROM admin_farmer_details WHERE farmer_id = %s', (farmerId,))
+            # print('fetching successful')
+            cursor.execute("UPDATE admin_product_details SET farmer_id = -1 WHERE farmer_id = %s", (farmerId,))
+            print('Foreign key nulled soccessfully')
+            cursor.execute("DELETE FROM admin_farmer_details WHERE farmer_id = %s", (farmerId,))
             print('query executed successfully')
             connection.commit()
             cursor.close()
         return jsonify({"message": "Profile deleted successfully"}), 200
     except Exception as e:
-        return jsonify({"error": str(e)}), 500
+        print("Error deleting profile:", e)  # Print the specific error for debugging
+        return jsonify({"error": "Failed to delete profile. Please try again later."}), 500
 
 @app.route('/api/editFarmerProfile', methods=['PUT'])
 def edit_farmer_profile():
