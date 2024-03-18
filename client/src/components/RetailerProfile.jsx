@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "../RetailerProfile.css";
+import "../FarmerProfile.css";
 import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
 import { UserProfilePic } from "../assets";
 
@@ -110,7 +110,7 @@ const RetailerProfile = () => {
   };
 
   return (
-    <div className="retailer-profile">
+    <div className="farmer-profile">
       <div className="user-info">
         {/* Display user image */}
         <div className="user-image">

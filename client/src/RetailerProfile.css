@@ -9,6 +9,7 @@
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   max-height: 100vh;
   max-width: 150vh;
+  margin-top: 20px;
   overflow-y: auto;
 }
 .retailer-profile::-webkit-scrollbar {
