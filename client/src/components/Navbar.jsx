@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { close, logo1, menu } from "../assets";
 import { navLinks } from "../constants";
-//import SignInPage from "./SignInPage";
 import { Link } from "react-router-dom";
 
 const Navbar = () => {
@@ -28,20 +27,22 @@ const Navbar = () => {
             <a href={`#${nav.id}`}>{nav.title}</a>
           </li>
         ))}
-        {/* Sign-in button */}
 
-        <Link to="/signinpage">
-          <button className="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline mr-4">
-            Sign In
-          </button>
-        </Link>
+        <li>
+          <Link to="/signinpage">
+            <button className="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline mr-4">
+              Sign In
+            </button>
+          </Link>
+        </li>
 
-        {/* Admin button */}
-        <Link to="/adminloginpage">
-          <button className="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline mr-4">
-            Admin
-          </button>
-        </Link>
+        <li>
+          <Link to="/adminloginpage">
+            <button className="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline mr-4">
+              Admin
+            </button>
+          </Link>
+        </li>
       </ul>
 
       <div className="sm:hidden flex flex-1 justify-end items-center">
@@ -49,11 +50,7 @@ const Navbar = () => {
           src={toggle ? close : menu}
           alt="menu"
           className="w-[28px] h-[28px] object-contain menu-icon"
-          onClick={() => {
-            console.log("Toggle state before click:", toggle);
-            setToggle(!toggle);
-            console.log("Toggle state after click:", !toggle);
-          }}
+          onClick={() => setToggle(!toggle)}
         />
 
         <div
@@ -73,18 +70,22 @@ const Navbar = () => {
                 <a href={`#${nav.id}`}>{nav.title}</a>
               </li>
             ))}
-            <Link to="/signinpage">
-              <button className="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline mr-4">
-                Sign In
-              </button>
-            </Link>
 
-            {/* Admin button */}
-            <Link to="/adminloginpage">
-              <button className="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline mr-4">
-                Admin
-              </button>
-            </Link>
+            <li>
+              <Link to="/signinpage">
+                <button className="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline mr-4">
+                  Sign In
+                </button>
+              </Link>
+            </li>
+
+            <li>
+              <Link to="/adminloginpage">
+                <button className="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline mr-4 mt-0.5">
+                  Admin
+                </button>
+              </Link>
+            </li>
           </ul>
         </div>
       </div>

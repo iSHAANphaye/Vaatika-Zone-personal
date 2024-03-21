@@ -31,6 +31,7 @@ const FarmerProfile = () => {
     e.preventDefault();
     try {
       const farmerId = parseInt(sessionStorage.getItem("farmerId"), 10);
+      // const url = `https://j37nyv-5000.csb.app/api/editFarmerProfile?farmerId=${farmerId}`;
       const url = `https://vaatiika-zone-backend.onrender.com/api/editFarmerProfile?farmerId=${farmerId}`;
       const response = await fetch(url, {
         method: "PUT",
@@ -77,7 +78,8 @@ const FarmerProfile = () => {
     // Send a request to the backend to delete the user's profile
     const farmerId = parseInt(sessionStorage.getItem("farmerId"), 10);
     console.log("Deleting Farmer ID:", farmerId);
-    const url = `https://j37nyv-5000.csb.app/api/deleteFarmerProfile?farmerId=${farmerId}`;
+    // const url = `https://j37nyv-5000.csb.app/api/deleteFarmerProfile?farmerId=${farmerId}`;
+    const url = `https://vaatiika-zone-backend.onrender.com/api/deleteFarmerProfile?farmerId=${farmerId}`;
     fetch(url)
       .then((response) => {
         if (response.ok) {
@@ -124,9 +126,9 @@ const FarmerProfile = () => {
           )}
         </div>
         {/* Display username */}
-        <div className="welcome-message">
+        {/* <div className="welcome-message">
           {sessionStorage.getItem("farmerName")}!
-        </div>
+        </div> */}
       </div>
       <form onSubmit={handleSubmit}>
         {/* Display username */}

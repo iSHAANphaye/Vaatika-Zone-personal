@@ -12,9 +12,9 @@ const AdminProducts = () => {
     // Function to fetch products from the backend API
     const fetchProducts = async () => {
       try {
-        const response = await fetch(
-          "https://vaatiika-zone-backend.onrender.com/api/getAllProducts",
-        ); // Replace with your backend API endpoint
+        const url = "https://j37nyv-5000.csb.app/api/getAllProducts";
+        // const url = "https://vaatiika-zone-backend.onrender.com/api/getAllProducts";
+        const response = await fetch(url); // Replace with your backend API endpoint
         if (response.ok) {
           const data = await response.json();
           setProducts(data);
@@ -132,7 +132,7 @@ const AdminProducts = () => {
               <td>{index + 1}</td>
               <td>{product.farmer_name}</td>
               <td>
-                <Link to={`/adminlayout/product/${product.id}`}>
+                <Link to={`/adminlayout/product/${product.product_id}`}>
                   {product.product_name}
                 </Link>
               </td>

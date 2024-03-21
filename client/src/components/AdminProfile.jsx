@@ -31,7 +31,8 @@ const AdminProfile = () => {
     e.preventDefault();
     try {
       const adminId = parseInt(sessionStorage.getItem("adminId"), 10);
-      const url = `https://vaatiika-zone-backend.onrender.com/api/editAdminProfile?adminId=${adminId}`;
+      // const url = `https://vaatiika-zone-backend.onrender.com/api/editAdminProfile?adminId=${adminId}`;
+      const url = `https://j37nyv-5000.csb.app/api/editAdminProfile?adminId=${adminId}`;
       const response = await fetch(url, {
         method: "PUT",
         headers: {
@@ -76,9 +77,9 @@ const AdminProfile = () => {
   const handleDeleteClick = () => {
     // Send a request to the backend to delete the user's profile
     const adminId = parseInt(sessionStorage.getItem("adminId"), 10);
-    fetch(
-      `https://j37nyv-5000.csb.app/api/deleteAdminProfile?adminId=${adminId}`,
-    )
+    const url = `https://j37nyv-5000.csb.app/api/deleteAdminProfile?adminId=${adminId}`;
+    // const url = `https://vaatiika-zone-backend.onrender.com/api/deleteAdminProfile?adminId=${adminId}`;
+    fetch(url)
       .then((response) => {
         if (response.ok) {
           // Profile deleted successfully

@@ -6,6 +6,7 @@ import {
   AiOutlineEyeInvisible,
 } from "react-icons/ai";
 import { Link, useNavigate } from "react-router-dom";
+import "../Signin.css";
 
 const SignInPage = () => {
   const [userType, setUserType] = useState(null);
@@ -104,7 +105,7 @@ const SignInPage = () => {
       className="text-white h-screen flex justify-center items-center"
       style={{ backgroundColor: "#FFFFFF" }}
     >
-      <div className="bg-green-200 border rounded-md p-8 shadow-lg backdrop-filter backdrop-blur-sm bg-opacity-60 w-96 h-auto relative">
+      <div className="bg-green-200 border rounded-md p-8 shadow-lg backdrop-filter backdrop-blur-sm bg-opacity-60 w-96 h-auto relative signinpage">
         <div className="text-4x1 text-black font-bold text-center mb-6">
           <h1 className="text-4xl mb-6">Welcome Back!</h1>
           <form onSubmit={handleSubmit}>

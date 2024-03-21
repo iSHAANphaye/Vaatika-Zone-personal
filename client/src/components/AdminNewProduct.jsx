@@ -21,16 +21,14 @@ const AdminNewProduct = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch(
-        "https://vaatiika-zone-backend.onrender.com/api/addAdminProduct",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(formData),
+      const url = "https://j37nyv-5000.csb.app/api/addAdminProduct";
+      const response = await fetch(url, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
         },
-      );
+        body: JSON.stringify(formData),
+      });
       if (response.ok) {
         console.log("Admin product added successfully");
         // Clear form data

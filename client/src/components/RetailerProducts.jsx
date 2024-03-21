@@ -369,15 +369,11 @@ const RetailerProducts = () => {
         {filteredAndSortedProducts.map((product) => (
           <Link
             key={product.id}
-            to={"/retailerdashboard/retailerproductdetails/${product.id}"}
+            to={`/retailerdashboard/retailerproductdetails/${product.id}`}
             className="product-link"
           >
             <div className="retailer-product-card" key={product.id}>
-              <img
-                src={product.image}
-                alt={product.name}
-                className="product-image"
-              />
+              {/* <img src={Grey_background} alt={product.name} className="product-image" /> */}
               <div className="retailer-product-details">
                 <h3 className="retailer-product-name">{product.name}</h3>
                 <p className="retailer-product-category">
@@ -390,19 +386,19 @@ const RetailerProducts = () => {
                   Price: Rs.{product.price}
                 </p>
               </div>
-              {/* Render filled heart icon if product is in favorites, otherwise render outlined heart */}
-              {favorites.includes(product.id) ? (
-                <AiFillHeart
-                  className="retailer-favorite-icon"
-                  onClick={() => toggleFavorite(product.id)}
-                  style={{ color: "red" }}
-                />
-              ) : (
-                <AiOutlineHeart
-                  className="retailer-favorite-icon"
-                  onClick={() => toggleFavorite(product.id)}
-                />
-              )}
+              {/* Render filled heart icon if product is in favorites, otherwise render outlined heart
+            {favorites.includes(product.id) ? (
+              <AiFillHeart
+                className="retailer-favorite-icon"
+                onClick={() => toggleFavorite(product.id)}
+                style={{ color: 'red' }}
+              />
+            ) : (
+              <AiOutlineHeart
+                className="retailer-favorite-icon"
+                onClick={() => toggleFavorite(product.id)}
+              />
+            )} */}
             </div>
           </Link>
         ))}

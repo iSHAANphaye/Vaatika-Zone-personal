@@ -80,7 +80,7 @@ const AdminLoginPage = () => {
       className="text-white h-screen flex justify-center items-center bg-cover"
       style={{ background: "url('../src/assets/cover" }}
     >
-      <div className="bg-green-200 border rounded-md p-8 shadow-lg backdrop-filter backdrop-blur-sm bg-opacity-60 w-96 h-auto relative">
+      <div className="bg-green-200 border rounded-md p-8 shadow-lg backdrop-filter backdrop-blur-sm bg-opacity-60 w-96 admin-signinpage h-auto relative">
         <div className="text-4x1 text-black font-bold text-center mb-6">
           <h1 className="text-4xl mb-6">Admin</h1>
           <form onSubmit={handleLogin}>

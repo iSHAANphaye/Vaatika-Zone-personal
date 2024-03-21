@@ -12,9 +12,9 @@ const AdminDashboard = () => {
     // Function to fetch products from the backend API
     const fetchProducts = async () => {
       try {
-        const response = await fetch(
-          "https://vaatiika-zone-backend.onrender.com/api/getDashboardProducts",
-        ); // Replace with your backend API endpoint
+        const url = `https://j37nyv-5000.csb.app/api/getDashboardProducts`;
+        // const url = `https://vaatiika-zone-backend.onrender.com/api/getDashboardProducts`;
+        const response = await fetch(url); // Replace with your backend API endpoint
         if (response.ok) {
           const data = await response.json();
           setProducts(data);
@@ -152,7 +152,7 @@ const AdminDashboard = () => {
               <tr key={index}>
                 <td>{index + 1}</td>
                 <td>
-                  <Link to={`/adminlayout/addedproducts/${product.id}`}>
+                  <Link to={`/adminlayout/addedproducts/${product.product_id}`}>
                     {product.product_name}
                   </Link>
                 </td>
@@ -161,8 +161,7 @@ const AdminDashboard = () => {
                 <td>{product.retailer_price}</td>
                 <td>{product.in_stock}</td>
                 <td>{new Date(product.date).toLocaleDateString("en-GB")}</td>
-                <td>{product.farmer_name}</td>{" "}
-                {/* Display who listed the product */}
+                <td>adminName</td> {/* Display who listed the product */}
               </tr>
             ))}
           </tbody>

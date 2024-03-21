@@ -17,7 +17,7 @@ const RetailerDashboard = () => {
           {/* Route for RetailerProducts */}
           {/* <Route path="/allproducts" element={<RetailerProducts />} /> */}
           {/* Other routes */}
-          <Route path="/wishlist" element={<RetailerWishlist />} />
+          {/* <Route path="/wishlist" element={<RetailerWishlist />} /> */}
           {/* <Route path="/profile" element={<RetailerProfile />} /> */}
         </Routes>
         <Outlet />

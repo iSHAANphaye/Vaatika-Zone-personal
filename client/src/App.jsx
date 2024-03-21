@@ -25,6 +25,7 @@ import AdminFarmerDetails from "./components/AdminFarmerDetails";
 import AdminRetailerDetails from "./components/AdminRetailerDetails";
 import AdminAddedProductDetails from "./components/AdminAddedProductDetails";
 import RetailerProductDetails from "./components/RetailerProductDetails";
+import AdminOrders from "./components/AdminOrders";
 
 const App = () => (
   <BrowserRouter>
@@ -44,6 +45,7 @@ const App = () => (
           <Route path="farmerdata" element={<AdminFarmers />} />
           <Route path="addadminproduct" element={<AdminNewProduct />} />
           <Route path="profile" element={<AdminProfile />} />
+          <Route path="adminorders" element={<AdminOrders />} />
           <Route path="product/:productId" element={<AdminProductDetails />} />
           {/* <Route path="farmerprofile/:farmerId" element={<FarmerProfile />} /> */}
           <Route

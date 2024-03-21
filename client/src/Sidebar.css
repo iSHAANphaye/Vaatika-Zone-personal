@@ -36,6 +36,7 @@ body {
   align-items: center;
   cursor: pointer;
   transition: background-color 0.3s;
+  margin-left: -40px;
 }
 
 .SidebarList .row:hover {
@@ -149,7 +150,6 @@ body {
     overflow-y: auto;
   }
 }
-
 /* Media query for small screens */
 @media (max-width: 768px) {
   .Sidebar {

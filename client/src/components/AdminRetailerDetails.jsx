@@ -17,6 +17,8 @@ const AdminRetailerDetails = () => {
         category: "Category 1",
         price: "Rs.10",
         quantity: "20",
+        orderdate: "19/03/2024",
+        status: "Approved",
       },
       {
         id: 2,
@@ -24,6 +26,8 @@ const AdminRetailerDetails = () => {
         category: "Category 2",
         price: "Rs.15",
         quantity: "20",
+        orderdate: "19/03/2024",
+        status: "Approved",
       },
       {
         id: 3,
@@ -31,6 +35,8 @@ const AdminRetailerDetails = () => {
         category: "Category 1",
         price: "Rs.20",
         quantity: "20",
+        orderdate: "19/03/2024",
+        status: "Approved",
       },
       {
         id: 4,
@@ -38,6 +44,8 @@ const AdminRetailerDetails = () => {
         category: "Category 1",
         price: "Rs.20",
         quantity: "20",
+        orderdate: "19/03/2024",
+        status: "Approved",
       },
       {
         id: 5,
@@ -45,6 +53,8 @@ const AdminRetailerDetails = () => {
         category: "Category 1",
         price: "Rs.20",
         quantity: "20",
+        orderdate: "19/03/2024",
+        status: "Approved",
       },
       {
         id: 6,
@@ -52,6 +62,8 @@ const AdminRetailerDetails = () => {
         category: "Category 1",
         price: "Rs.20",
         quantity: "20",
+        orderdate: "19/03/2024",
+        status: "Approved",
       },
       {
         id: 7,
@@ -59,6 +71,8 @@ const AdminRetailerDetails = () => {
         category: "Category 1",
         price: "Rs.20",
         quantity: "20",
+        orderdate: "19/03/2024",
+        status: "Approved",
       },
       {
         id: 8,
@@ -66,6 +80,8 @@ const AdminRetailerDetails = () => {
         category: "Category 1",
         price: "Rs.20",
         quantity: "20",
+        orderdate: "19/03/2024",
+        status: "Approved",
       },
       {
         id: 9,
@@ -73,6 +89,8 @@ const AdminRetailerDetails = () => {
         category: "Category 1",
         price: "Rs.20",
         quantity: "20",
+        orderdate: "19/03/2024",
+        status: "Approved",
       },
       {
         id: 10,
@@ -80,6 +98,8 @@ const AdminRetailerDetails = () => {
         category: "Category 1",
         price: "Rs.20",
         quantity: "20",
+        orderdate: "19/03/2024",
+        status: "Approved",
       },
       {
         id: 11,
@@ -87,6 +107,8 @@ const AdminRetailerDetails = () => {
         category: "Category 1",
         price: "Rs.20",
         quantity: "20",
+        orderdate: "19/03/2024",
+        status: "Approved",
       },
       // Add more wishlisted products as needed
     ],
@@ -122,6 +144,8 @@ const AdminRetailerDetails = () => {
               <th>Category</th>
               <th>Price</th>
               <th>Quantity</th>
+              <th>Order Date</th>
+              <th>Status</th>
             </tr>
           </thead>
           <tbody>
@@ -131,6 +155,8 @@ const AdminRetailerDetails = () => {
                 <td>{product.category}</td>
                 <td>{product.price}</td>
                 <td>{product.quantity}</td>
+                <td>{product.orderdate}</td>
+                <td>{product.status}</td>
               </tr>
             ))}
           </tbody>

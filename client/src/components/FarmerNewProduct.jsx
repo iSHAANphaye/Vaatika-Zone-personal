@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "../FarmerNewProduct.css"; // Import the CSS file
 
 const FarmerNewProduct = () => {
+  // const [imageFile, setImageFile] = useState(null);
   const [formData, setFormData] = useState({
     farmerName: sessionStorage.getItem("farmerName") || "",
     date: "",
@@ -10,11 +11,27 @@ const FarmerNewProduct = () => {
     productPrice: "",
     productQuantity: "",
     productDescription: "",
+    productImage: null,
   });
+
+  const [imagePreview, setImagePreview] = useState(null);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData({ ...formData, [name]: value });
+    setFormData((prevData) => ({
+      ...prevData,
+      [name]: value,
+    }));
+  };
+
+  const handleImageChange = (e) => {
+    const selectedFile = e.target.files[0];
+    setFormData((prevData) => ({
+      ...prevData,
+      productImage: selectedFile,
+    }));
+    const imageUrl = URL.createObjectURL(selectedFile);
+    setImagePreview(imageUrl);
   };
 
   const handleSubmit = async (e) => {
@@ -41,6 +58,7 @@ const FarmerNewProduct = () => {
           productPrice: "",
           productQuantity: "",
           productDescription: "",
+          productImage: null,
         });
       } else {
         console.error("Failed to add product:", response.statusText);
@@ -135,9 +153,16 @@ const FarmerNewProduct = () => {
           type="file"
           id="productImage"
           name="productImage"
-          value={formData.productImage}
-          onChange={handleChange}
+          onChange={handleImageChange}
         />
+
+        {imagePreview && (
+          <img
+            src={imagePreview}
+            alt="Product Preview"
+            style={{ maxWidth: "200px" }}
+          />
+        )}
 
         <button type="submit">Add Product</button>
       </form>

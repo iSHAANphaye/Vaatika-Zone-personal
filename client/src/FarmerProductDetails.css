@@ -1,0 +1,94 @@
+/* Container for the product */
+.product-container2 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
+/* Styling for the product image */
+.product-image2 {
+  width: 300px;
+  height: 300px;
+  background-color: #f0f0f0;
+  border-radius: 5px;
+  margin-left: 30px;
+}
+
+/* Styling for the product details */
+.product-details2 {
+  flex: 1;
+  margin-left: 20px;
+}
+
+/* Styling for the product name */
+.product-name2 {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+/* Styling for the product category */
+.product-category2 {
+  font-size: 1.2rem;
+  color: #666;
+}
+
+/* Styling for the product description */
+.product-description2 {
+  margin-top: 10px;
+}
+
+/* Styling for the product quantity */
+.product-quantity2 {
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+/* Styling for the product price */
+.product-price2 {
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+/* Styling for the listing date */
+.listing-date2 {
+  margin-top: 10px;
+  color: #666;
+}
+
+/* Styling for the edit and remove buttons */
+.button-container2 {
+  display: flex;
+  align-items: center;
+}
+
+.edit-product-btn2 {
+  padding: 10px 20px;
+  margin-left: 10px;
+  background-color: #3af258;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.remove-product-btn2 {
+  padding: 10px 20px;
+  margin-left: 10px;
+  background-color: #ec0c26;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.edit-product-btn2:hover {
+  background-color: #1ac122;
+}
+
+.remove-product-btn2:hover {
+  background-color: #911313;
+}

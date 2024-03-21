@@ -1,53 +1,85 @@
 import React, { useState } from "react";
-import "../AdminProductDetails.css";
+import "../AdminAddedProductDetails.css";
 
-const RetailerProductDetails = () => {
-  const [orderQuantity, setOrderQuantity] = useState(1); // State to track order quantity
+const AdminAddedProductDetails = () => {
+  // Admin profile data state
+  const [productData, setProductData] = useState({
+    productName: "Apple",
+    category: "fruits",
+    description: "dhbcgdvgcbhdbchb yuebcgbvcc cvubcuedbc vbecbdbc cbyebcyhbch",
+    price: "Rs.20/kg",
+    quantity: "50kg",
+    orderQuantity: "", // New state for order quantity
+  });
 
-  const handleEditProduct = () => {
-    // Implement order logic here
-    console.log("Order placed with quantity:", orderQuantity);
+  // Handle input change for order quantity
+  const handleOrderQuantityChange = (e) => {
+    setProductData({ ...productData, orderQuantity: e.target.value });
   };
 
-  const handleQuantityChange = (event) => {
-    const quantity = parseInt(event.target.value);
-    setOrderQuantity(quantity);
+  // Handle order now button click
+  const handleOrderNowClick = () => {
+    if (productData.orderQuantity.trim() === "") {
+      alert("Please enter your order quantity");
+    } else {
+      // Implement order submission logic here
+      alert(
+        `Order placed for ${productData.orderQuantity} of ${productData.productName}`,
+      );
+    }
   };
 
   return (
-    <div className="">
-      <div className="product-image"></div>
+    <div className="admin-added-product">
       <div className="product-details">
-        <h2 className="product-name">Product Name</h2>
-        <p className="product-category">Category Name</p>
-        <p className="product-description">Product Description</p>
-        <p className="product-quantity">10 units</p>
-        <p className="product-price">$10.99</p>
-        <p className="listing-date">13/03/2024</p>
-        <p className="listed-by">Admin 1</p>
-        {/* Input field for order quantity */}
-        <div className="order-quantity">
-          <label htmlFor="quantity">Enter value : </label>
+        {/* Product Name */}
+        <div className="form-group">
+          <label>Product name:</label>
+          <input type="text" value={productData.productName} disabled />
+        </div>
+
+        {/* Category */}
+        <div className="form-group">
+          <label>Category:</label>
+          <input type="text" value={productData.category} disabled />
+        </div>
+
+        {/* Description */}
+        <div className="form-group">
+          <label>Description:</label>
+          <textarea value={productData.description} disabled></textarea>
+        </div>
+
+        {/* Price */}
+        <div className="form-group">
+          <label>Price:</label>
+          <input type="text" value={productData.price} disabled />
+        </div>
+
+        {/* Quantity */}
+        <div className="form-group">
+          <label>Quantity:</label>
+          <input type="text" value={productData.quantity} disabled />
+        </div>
+
+        {/* Order Quantity (Editable) */}
+        <div className="form-group">
+          <label>Order Quantity:</label>
           <input
-            type="number"
-            id="quantity"
-            name="quantity"
-            min="1"
-            value={orderQuantity}
-            onChange={handleQuantityChange}
+            type="text"
+            value={productData.orderQuantity}
+            placeholder="Enter your order value"
+            onChange={handleOrderQuantityChange}
           />
         </div>
-        <div>
-          <button
-            className="retailer-edit-product-btn"
-            onClick={handleEditProduct}
-          >
-            Order Now
-          </button>
-        </div>
       </div>
+
+      {/* Order Now Button */}
+      <button className="order-now-button" onClick={handleOrderNowClick}>
+        Order Now
+      </button>
     </div>
   );
 };
 
-export default RetailerProductDetails;
+export default AdminAddedProductDetails;

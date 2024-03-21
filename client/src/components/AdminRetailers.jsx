@@ -49,7 +49,7 @@ const AdminRetailers = () => {
   return (
     <div className="retailer-container">
       <h2>List of Retailers</h2>
-      <div className="search-bar">
+      {/* <div className="search-bar">
         <input
           type="text"
           placeholder="Search by username..."
@@ -57,7 +57,7 @@ const AdminRetailers = () => {
           onChange={handleSearchChange}
         />
         <button onClick={handleSearch}>Search</button>
-      </div>
+      </div> */}
       <table className="retailer-table">
         <thead>
           <tr>

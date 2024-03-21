@@ -1,376 +1,187 @@
-.product-card {
-  display: flex;
-  flex-direction: column; /* Make the flex items stack vertically */
-  justify-content: center; /* Align items vertically in the center */
-  align-items: center; /* Align items horizontally in the center */
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  overflow: hidden;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  transition: box-shadow 0.3s ease;
-  margin-left: 1000px; /* Center the card horizontally */
-  margin-right: 50px; /* Center the card horizontally */
+/* AdminProfile.css */
+
+.admin-added-product {
+  width: 66%;
+  margin: auto;
+  padding: 20px;
+  background-color: #f8f9fa;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-height: 100vh;
+  max-width: 150vh;
+  overflow-y: auto;
+  margin-right: 20px;
+  margin-left: 310px;
   margin-top: 30px;
-  width: 900px;
-  height: 650px; /* Adjust width as needed */
+}
+.admin-added-product::-webkit-scrollbar {
+  display: none;
 }
 
-.product-image {
-  width: 340px;
-  height: 340px;
-  background-color: #eee;
-  flex-shrink: 0;
+.user-info {
+  display: flex;
   align-items: center;
-  margin-top: 20px;
-  margin-left: 600px;
+  margin-bottom: 20px;
 }
 
-.product-details {
+.user-image img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 20px;
+}
+
+.welcome-message {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-left: 20px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="tel"],
+.form-group input[type="password"] {
+  width: 100%;
   padding: 10px;
-  margin-left: 600px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
 }
 
-.product-name {
-  font-size: 20px;
-  margin: 0;
+.form-group input[type="file"] {
+  margin-top: 10px;
 }
 
-.product-category,
-.product-description,
-.product-quantity,
-.product-price,
-.listing-date,
-.listed-by {
-  margin: 10px 0;
+.profile-details {
+  margin-bottom: 10px;
 }
 
-.product-category::before {
-  content: "Category: ";
-  font-weight: bold;
+.password-field {
+  position: relative;
 }
 
-.product-description::before {
-  content: "Description: ";
-  font-weight: bold;
+.eye-icon {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  cursor: pointer;
 }
 
-.product-quantity::before {
-  content: "Quantity: ";
-  font-weight: bold;
-}
-
-.product-price::before {
-  content: "Price: ";
-  font-weight: bold;
-}
-.listing-date::before {
-  content: "Listing Date: ";
-  font-weight: bold;
-}
-.listed-by::before {
-  content: "Listed By: ";
-  font-weight: bold;
-}
-
-.remove-product-btn {
+button {
   padding: 10px 20px;
-  font-size: 16px;
-  background-color: #ff6347;
-  color: #fff;
   border: none;
   border-radius: 5px;
+  font-size: 1rem;
   cursor: pointer;
   transition: background-color 0.3s ease;
-  margin-bottom: 10px;
-  margin-top: -13px;
-  margin-left: 600px;
+  margin-left: 10px;
+  margin-right: 10px;
 }
 
-.remove-product-btn:hover {
+button.edit-button {
+  background-color: #3498db;
+  color: #fff;
+}
+
+button.delete-button {
   background-color: #e74c3c;
-}
-
-.edit-product-btn {
-  padding: 10px 20px;
-  font-size: 16px;
-  background-color: #35ef35;
   color: #fff;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-  margin-bottom: 10px;
-  margin-top: -13px;
-  margin-left: 600px;
 }
 
-.edit-product-btn:hover {
-  background-color: #10d21a;
+button.save-button {
+  background-color: #2ecc71;
+  color: #fff;
 }
 
-@media (max-width: 1000px) {
-  .product-card {
-    display: none;
-    flex-direction: column; /* Make the flex items stack vertically */
-    justify-content: center; /* Align items vertically in the center */
-    align-items: center; /* Align items horizontally in the center */
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    transition: box-shadow 0.3s ease;
-    margin-left: -200px; /* Center the card horizontally */
-    margin-right: 100px; /* Center the card horizontally */
+button.edit-button:hover {
+  background-color: #2980b9;
+}
+
+button.delete-button:hover {
+  background-color: #c0392b;
+}
+
+button.save-button:hover {
+  background-color: #27ae60;
+}
+
+/* AdminProfile.css */
+
+/* Other styles... */
+
+.button-group {
+  display: flex;
+  justify-content: flex-start;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.button-group button {
+  margin-right: 10px;
+}
+
+.button-group button:last-child {
+  margin-right: 0;
+}
+
+@media (max-width: 920px) {
+  .admin-added-product {
+    width: 66%;
+    margin: auto;
+    padding: 20px;
+    background-color: #f8f9fa;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-height: 100vh;
+    max-width: 150vh;
+    overflow-y: auto;
+    margin-right: 20px;
+    margin-left: 250px;
     margin-top: 30px;
-    width: 300px;
-    height: 400px; /* Adjust width as needed */
-  }
-
-  .product-image {
-    width: 340px;
-    height: 340px;
-    background-color: #eee;
-    flex-shrink: 0;
-    align-items: center;
-    margin-top: 20px;
-    margin-left: 300px;
-  }
-
-  .product-details {
-    padding: 10px;
-    margin-left: 300px;
-  }
-  .remove-product-btn {
-    padding: 10px 20px;
-    font-size: 16px;
-    background-color: #ff6347;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    margin-bottom: 10px;
-    margin-top: -13px;
-    margin-left: 300px;
-  }
-  .edit-product-btn {
-    padding: 10px 20px;
-    font-size: 16px;
-    background-color: #35ef35;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    margin-bottom: 10px;
-    margin-top: -13px;
-    margin-left: 300px;
   }
 }
 
 @media (max-width: 864px) {
-  .product-card {
-    display: flex;
-    flex-direction: column; /* Make the flex items stack vertically */
-    justify-content: center; /* Align items vertically in the center */
-    align-items: center; /* Align items horizontally in the center */
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    transition: box-shadow 0.3s ease;
-    margin-left: 450px; /* Center the card horizontally */
-    margin-right: 50px; /* Center the card horizontally */
+  .admin-added-product {
+    width: 66%;
+    margin: auto;
+    padding: 20px;
+    background-color: #f8f9fa;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-height: 100vh;
+    max-width: 150vh;
+    overflow-y: auto;
+    margin-right: 20px;
+    margin-left: 200px;
     margin-top: 30px;
-    width: 900px;
-    height: 650px; /* Adjust width as needed */
   }
 }
 
 @media (max-width: 768px) {
-  .product-card {
-    display: flex;
-    flex-direction: column; /* Make the flex items stack vertically */
-    justify-content: center; /* Align items vertically in the center */
-    align-items: center; /* Align items horizontally in the center */
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    transition: box-shadow 0.3s ease;
-    margin-left: 450px; /* Center the card horizontally */
-    margin-right: 50px; /* Center the card horizontally */
+  .admin-added-product {
+    width: 66%;
+    margin: auto;
+    padding: 20px;
+    background-color: #f8f9fa;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-height: 100vh;
+    max-width: 150vh;
+    overflow-y: auto;
+    margin-right: 20px;
+    margin-left: 70px;
     margin-top: 30px;
-    width: 900px;
-    height: 650px; /* Adjust width as needed */
-  }
-  .product-image {
-    width: 340px;
-    height: 340px;
-    background-color: #eee;
-    flex-shrink: 0;
-    align-items: center;
-    margin-top: 20px;
-    margin-left: 100px;
-  }
-
-  .product-details {
-    padding: 10px;
-    margin-left: 100px;
-  }
-  .remove-product-btn {
-    padding: 10px 20px;
-    font-size: 16px;
-    background-color: #ff6347;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    margin-bottom: 10px;
-    margin-top: -13px;
-    margin-left: 100px;
-  }
-  .edit-product-btn {
-    padding: 10px 20px;
-    font-size: 16px;
-    background-color: #35ef35;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    margin-bottom: 10px;
-    margin-top: -13px;
-    margin-left: 100px;
-  }
-}
-
-@media (max-width: 640px) {
-  .product-card {
-    display: flex;
-    flex-direction: column; /* Make the flex items stack vertically */
-    justify-content: center; /* Align items vertically in the center */
-    align-items: center; /* Align items horizontally in the center */
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    transition: box-shadow 0.3s ease;
-    margin-left: 450px; /* Center the card horizontally */
-    margin-right: 50px; /* Center the card horizontally */
-    margin-top: 30px;
-    width: 900px;
-    height: 650px; /* Adjust width as needed */
-  }
-  .product-image {
-    width: 250px;
-    height: 250px;
-    background-color: #eee;
-    flex-shrink: 0;
-    align-items: center;
-    margin-top: 20px;
-    margin-left: 60px;
-  }
-
-  .product-details {
-    padding: 10px;
-    margin-left: 60px;
-  }
-  .remove-product-btn {
-    padding: 10px 20px;
-    font-size: 16px;
-    background-color: #ff6347;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    margin-bottom: 10px;
-    margin-top: -13px;
-    margin-left: 60px;
-  }
-  .edit-product-btn {
-    padding: 10px 20px;
-    font-size: 16px;
-    background-color: #35ef35;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    margin-bottom: 10px;
-    margin-top: -13px;
-    margin-left: 60px;
-  }
-}
-@media (max-width: 436px) {
-  .product-image {
-    width: 100px;
-    height: 100px;
-    background-color: #eee;
-    flex-shrink: 0;
-    align-items: center;
-    margin-top: 20px;
-    margin-left: 60px;
-  }
-}
-@media (max-width: 360px) {
-  .product-card {
-    display: flex;
-    flex-direction: column; /* Make the flex items stack vertically */
-    justify-content: center; /* Align items vertically in the center */
-    align-items: center; /* Align items horizontally in the center */
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    transition: box-shadow 0.3s ease;
-    margin-left: 450px; /* Center the card horizontally */
-    margin-right: 50px; /* Center the card horizontally */
-    margin-top: 30px;
-    width: 900px;
-    height: 650px; /* Adjust width as needed */
-  }
-  .product-image {
-    width: 60px;
-    height: 60px;
-    background-color: #eee;
-    flex-shrink: 0;
-    align-items: center;
-    margin-top: 20px;
-    margin-left: 60px;
-    margin-right: 100px;
-  }
-
-  .product-details {
-    padding: 10px;
-    margin-left: 40px;
-  }
-  .remove-product-btn {
-    padding: 10px 20px;
-    font-size: 16px;
-    background-color: #ff6347;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    margin-bottom: 10px;
-    margin-top: -13px;
-    margin-left: 60px;
-  }
-  .edit-product-btn {
-    padding: 10px 20px;
-    font-size: 16px;
-    background-color: #35ef35;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    margin-bottom: 10px;
-    margin-top: -13px;
-    margin-left: 60px;
   }
 }

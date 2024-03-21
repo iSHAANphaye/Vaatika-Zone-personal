@@ -4,6 +4,7 @@ import PersonIcon from "@mui/icons-material/Person";
 import PeopleOutlineIcon from "@mui/icons-material/PeopleOutline";
 import AddIcon from "@mui/icons-material/Add";
 import AccountBoxIcon from "@mui/icons-material/AccountBox";
+import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 
 export const SideBarData = [
   {
@@ -31,6 +32,11 @@ export const SideBarData = [
     title: "Add Product",
     icon: <AddIcon />,
     link: "/adminlayout/addadminproduct",
+  },
+  {
+    title: "Orders",
+    icon: <ShoppingCartIcon />,
+    link: "/adminlayout/adminorders",
   },
   {
     title: "Profile", // Add a new sidebar item for the user profile

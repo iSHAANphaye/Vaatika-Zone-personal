@@ -2,6 +2,7 @@ from flask import Flask, jsonify, request
 from flask_cors import CORS
 import pymysql
 import bcrypt  # For password hashing
+from werkzeug.utils import secure_filename
 # from threading import Thread
 # import time
 
@@ -301,6 +302,49 @@ def get_dashboard_products():
     cursor.close()
     return jsonify(products)
 
+
+@app.route('/api/getProductDetails')
+def get_product_details():
+    productId = request.args.get('productId')
+    print("Product details for product id:", productId)
+    cursor = connection.cursor()
+    cursor.execute("SELECT * FROM admin_product_details where product_id = %s", (productId,))
+    products = cursor.fetchall()
+    cursor.close()
+    return jsonify(products)
+
+@app.route('/api/getAdminProductDetails')
+def get_admin_product_details():
+    productId = request.args.get('productId')
+    print("Product details for product id:", productId)
+    cursor = connection.cursor()
+    cursor.execute("SELECT * FROM admin_dashboard where product_id = %s", (productId,))
+    products = cursor.fetchall()
+    cursor.close()
+    return jsonify(products)
+
+@app.route('/api/updateProductDetails')
+def update_product_details():
+    print('edit api called')
+    try:
+        data=request.json
+        productId = int(request.args.get('productId'))
+        print(productId)
+        productName = data.get('product')
+        productEmail = data.get('email')
+        productPhone = data.get('phone')
+        productAddress = data.get('address')
+        productPassword = data.get('password')
+        cursor = connection.cursor()
+        cursor.execute("UPDATE admin_product_details SET farmer_name = %s, email = %s, phone_number = %s, address = %s, password = %s WHERE farmer_id = %s",
+        (farmerName, farmerEmail, farmerPhone, farmerAddress, farmerPassword, farmerId))
+        connection.commit()
+        cursor.close()
+        return jsonify({"message": "Profile updated successfully"}), 200
+
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
+
 @app.route('/api/getAllFarmers')
 def get_All_farmers():
     cursor = connection.cursor()
@@ -326,6 +370,15 @@ def add_farmer_product():
     in_stock = int(data['productQuantity'])
     print('Farmer name is:',data['farmerName'])
     print('Product name is:',data['productName'])
+
+    # if 'productImage' in request.files:
+    #     product_image = request.files['productImage']
+    #     if product_image.filename != '':
+    #         filename = secure_filename(product_image.filename)
+    #         product_image.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
+    #         image_path = os.path.join(app.config['UPLOAD_FOLDER'], filename)
+    #         # Save the file path or image data in your database
+
     cursor = connection.cursor()
     cursor.execute("INSERT INTO admin_product_details (product_name, description, category, farmer_id, farmer_name, price, in_stock, date_of_listing) VALUES (%s, %s, %s, %s, %s, %s, %s, %s)",
                    (data['productName'], data['productDescription'], data['productCategory'], farmerId, data['farmerName'], price, in_stock, data['date']))

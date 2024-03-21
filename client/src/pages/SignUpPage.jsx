@@ -7,6 +7,7 @@ import {
 } from "react-icons/ai";
 import { HiOutlineMail } from "react-icons/hi";
 import { Link, useNavigate } from "react-router-dom";
+import "../Signin.css";
 
 const SignUpPage = () => {
   const [userType, setUserType] = useState("");
@@ -51,20 +52,23 @@ const SignUpPage = () => {
     }
     // Redirect based on selected user type
     try {
-      const response = await fetch("https://vaatiika-zone-backend.onrender.com/api/signup", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
+      const response = await fetch(
+        "https://vaatiika-zone-backend.onrender.com/api/signup",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            email,
+            username,
+            mobilenumber,
+            password,
+            confirmpassword,
+            userType,
+          }),
         },
-        body: JSON.stringify({
-          email,
-          username,
-          mobilenumber,
-          password,
-          confirmpassword,
-          userType,
-        }),
-      });
+      );
 
       if (response.ok) {
         const data = await response.json();
@@ -129,7 +133,7 @@ const SignUpPage = () => {
       className="text-white h-screen flex justify-center items-center"
       style={{ backgroundColor: "#F4FCF9" }}
     >
-      <div className="bg-green-200 border rounded-md p-8 shadow-lg backdrop-filter backdrop-blur-sm bg-opacity-60 w-96 h-auto relative">
+      <div className="bg-green-200 border rounded-md p-8 shadow-lg backdrop-filter backdrop-blur-sm bg-opacity-60 w-96 h-auto relative signinpage">
         <div className="text-5x1 text-black font-bold text-center mb-6">
           <h1 className="text-4xl mb-6">Let's get started</h1>
           <form onSubmit={handleSubmit}>
