@@ -39,16 +39,15 @@ const SignInPage = () => {
     }
 
     try {
-      const response = await fetch(
-        "https://vaatiika-zone-backend.onrender.com/api/login",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({ email, password, userType }),
+      const url = `https://j37nyv-5000.csb.app/api/login`;
+      // const url = `https://vaatiika-zone-backend.onrender.com/api/login`;
+      const response = await fetch(url, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
         },
-      );
+        body: JSON.stringify({ email, password, userType }),
+      });
 
       if (response.ok) {
         const data = await response.json();

@@ -31,16 +31,56 @@ def delete_farmer_profile():
         with connection.cursor() as cursor:
             # cursor.execute('SELECT * FROM admin_farmer_details WHERE farmer_id = %s', (farmerId,))
             # print('fetching successful')
-            cursor.execute("UPDATE admin_product_details SET farmer_id = -1 WHERE farmer_id = %s", (farmerId,))
+            cursor.execute("DELETE FROM admin_product_details WHERE farmer_id = %s", (farmerId,))
             print('Foreign key nulled soccessfully')
             cursor.execute("DELETE FROM admin_farmer_details WHERE farmer_id = %s", (farmerId,))
-            print('query executed successfully')
+            print('Farmer ID deleted...')
             connection.commit()
             cursor.close()
         return jsonify({"message": "Profile deleted successfully"}), 200
     except Exception as e:
         print("Error deleting profile:", e)  # Print the specific error for debugging
         return jsonify({"error": "Failed to delete profile. Please try again later."}), 500
+
+@app.route('/api/deleteFarmerProduct', methods=['GET'])
+def delete_farmer_product():
+    try:
+        productId = int(request.args.get('productId'))
+        print(productId)
+        with connection.cursor() as cursor:
+            cursor.execute("DELETE FROM admin_product_details WHERE product_id = %s", (productId,))
+            print('Foreign key nulled soccessfully')
+            # Add functionality to delete from admin_farmer_details table
+            # cursor.execute("DELETE FROM admin_farmer_details WHERE productId = %s", (productId,))
+            print('Product deleted...')
+            connection.commit()
+            cursor.close()
+        return jsonify({"message": "Product deleted successfully"}), 200
+    except Exception as e:
+        print("Error deleting product:", e)  # Print the specific error for debugging
+        return jsonify({"error": "Failed to delete product. Please try again later."}), 500
+
+@app.route('/api/editFarmerProduct', methods=['PUT'])
+def edit_farmer_product():
+    print('edit api called')
+    try:
+        data=request.json
+        productId = int(request.args.get('productId'))
+        print(productId)
+        productName = data.get('productName')
+        productCategory = data.get('category')
+        productDescription = data.get('description')
+        productPrice = data.get('price')
+        productQuantity = data.get('inStock')
+        print(productName, productCategory, productDescription, productPrice, productQuantity)
+        cursor = connection.cursor()
+        cursor.execute("UPDATE admin_product_details SET product_name = %s, price = %s, in_stock = %s, description = %s, category = %s WHERE product_id = %s",(productName, productPrice, productQuantity, productDescription, productCategory, productId))
+        connection.commit()
+        cursor.close() 
+        return jsonify({"message": "Product updated successfully"}), 200
+    
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
 
 @app.route('/api/editFarmerProfile', methods=['PUT'])
 def edit_farmer_profile():

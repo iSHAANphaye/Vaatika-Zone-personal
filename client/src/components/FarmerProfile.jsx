@@ -78,8 +78,8 @@ const FarmerProfile = () => {
     // Send a request to the backend to delete the user's profile
     const farmerId = parseInt(sessionStorage.getItem("farmerId"), 10);
     console.log("Deleting Farmer ID:", farmerId);
-    // const url = `https://j37nyv-5000.csb.app/api/deleteFarmerProfile?farmerId=${farmerId}`;
-    const url = `https://vaatiika-zone-backend.onrender.com/api/deleteFarmerProfile?farmerId=${farmerId}`;
+    const url = `https://j37nyv-5000.csb.app/api/deleteFarmerProfile?farmerId=${farmerId}`;
+    // const url = `https://vaatiika-zone-backend.onrender.com/api/deleteFarmerProfile?farmerId=${farmerId}`;
     fetch(url)
       .then((response) => {
         if (response.ok) {
