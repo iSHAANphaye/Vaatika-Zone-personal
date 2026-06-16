@@ -5,7 +5,8 @@
   "main": "src/testDb.js",
   "type": "module",
   "scripts": {
-    "start": "node --watch src/index.js",
+    "build": "npm install && npm install --prefix frontend && npm run build --prefix frontend",
+    "start": "node src/index.js",
     "server": "node --watch src/index.js",
     "client": "npm run dev --prefix frontend",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
