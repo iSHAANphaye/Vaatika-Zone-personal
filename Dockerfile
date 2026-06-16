@@ -6,12 +6,17 @@ WORKDIR /app
 
 # Copy dependency files
 COPY package*.json ./
+COPY frontend/package*.json ./frontend/
 
-# Install dependencies
+# Install both backend and frontend dependencies
 RUN npm install
+RUN npm install --prefix frontend
 
-# Copy application files
+# Copy all application files
 COPY . .
+
+# Build the React frontend into frontend/dist
+RUN npm run build --prefix frontend
 
 # Expose backend port
 EXPOSE 5000
