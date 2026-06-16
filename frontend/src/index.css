@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap');
+@import "tailwindcss";
+
+@theme {
+  /* Premium forest green and organic herb theme */
+  --color-primary-50: #f3fcf4;
+  --color-primary-100: #e3fae7;
+  --color-primary-200: #c6f3cc;
+  --color-primary-500: #10b981;
+  --color-primary-600: #059669;
+  --color-primary-700: #047857;
+  --color-primary-900: #064e3b;
+  
+  --color-sand-50: #fdfdfb;
+  --color-sand-100: #fafaf5;
+  --color-sand-200: #f4f3ea;
+  --color-sand-800: #433e33;
+
+  --font-display: "Outfit", sans-serif;
+  --font-sans: "Inter", sans-serif;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    font-family: var(--font-sans);
+    background-color: var(--color-sand-100);
+    color: var(--color-sand-800);
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+    font-weight: 600;
+  }
+}
+
+/* Glassmorphism utility classes */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.glass-panel-dark {
+  background: rgba(15, 23, 42, 0.6);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Custom premium card hover effects */
+.hover-card-trigger {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hover-card-trigger:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px -10px rgba(4, 120, 87, 0.15);
+}
