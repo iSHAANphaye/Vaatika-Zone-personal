@@ -1,0 +1,33 @@
+{
+  "name": "vaatika-zone-new",
+  "version": "1.0.0",
+  "description": "Vaatika Zone Database & Schema Setup",
+  "main": "src/testDb.js",
+  "type": "module",
+  "scripts": {
+    "build": "npm install && npm install --prefix frontend && npm run build --prefix frontend",
+    "start": "node src/index.js",
+    "server": "node --watch src/index.js",
+    "client": "npm run dev --prefix frontend",
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "test": "node src/testApi.js",
+    "test:db": "node src/testDb.js",
+    "test:api": "node src/testApi.js",
+    "seed": "node src/seedDb.js",
+    "profile": "node src/profileQueries.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^3.0.3",
+    "cors": "^2.8.6",
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1",
+    "jsonwebtoken": "^9.0.3",
+    "mongoose": "^9.7.0"
+  },
+  "devDependencies": {
+    "concurrently": "^10.0.3"
+  }
+}
