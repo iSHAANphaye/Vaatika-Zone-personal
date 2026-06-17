@@ -1,13 +1,14 @@
-import React, { createContext, useState, useEffect, useContext } from 'react';
+import React, { createContext, useState, useEffect, useContext, useRef } from 'react';
 import { useAuth } from './AuthContext';
 
 const CartContext = createContext();
 
 export const CartProvider = ({ children }) => {
   const [cart, setCart] = useState([]);
-  const { user } = useAuth();
+  const { user, token } = useAuth();
   const currentUserId = user?._id || 'anonymous';
   const [loadedUserId, setLoadedUserId] = useState(null);
+  const justLoadedRef = useRef(false);
 
   // Load and merge cart items on user change
   useEffect(() => {
@@ -15,59 +16,128 @@ export const CartProvider = ({ children }) => {
       return;
     }
 
-    const userKey = currentUserId === 'anonymous' ? 'cart_anonymous' : `cart_user_${currentUserId}`;
-    let loadedCart = [];
-
-    // Load current user's cart
-    const storedUserCart = localStorage.getItem(userKey);
-    if (storedUserCart) {
-      try {
-        loadedCart = JSON.parse(storedUserCart);
-      } catch (e) {
-        console.error('Failed to parse user cart storage:', e);
-      }
-    }
-
-    // If logging in, merge guest cart into user cart
-    if (currentUserId !== 'anonymous') {
-      const storedGuestCart = localStorage.getItem('cart_anonymous');
-      if (storedGuestCart) {
-        try {
-          const guestCart = JSON.parse(storedGuestCart);
-          if (guestCart && guestCart.length > 0) {
-            // Merge guest cart items into loadedCart
-            guestCart.forEach((guestItem) => {
-              const existingIndex = loadedCart.findIndex(
-                (item) => item.product._id === guestItem.product._id
-              );
-              if (existingIndex > -1) {
-                const newQty = loadedCart[existingIndex].quantity + guestItem.quantity;
-                const stockLimit = guestItem.product.stockCount ?? 999;
-                loadedCart[existingIndex].quantity = Math.min(newQty, stockLimit);
-              } else {
-                loadedCart.push(guestItem);
-              }
-            });
-            // Clear the guest cart from localStorage
-            localStorage.removeItem('cart_anonymous');
+    const fetchUserCart = async () => {
+      if (currentUserId === 'anonymous') {
+        let loadedCart = [];
+        const storedCart = localStorage.getItem('cart_anonymous');
+        if (storedCart) {
+          try {
+            loadedCart = JSON.parse(storedCart);
+          } catch (e) {
+            console.error('Failed to parse anonymous cart storage:', e);
           }
-        } catch (e) {
-          console.error('Failed to parse guest cart storage during merge:', e);
+        }
+        setCart(loadedCart);
+        setLoadedUserId('anonymous');
+        justLoadedRef.current = true;
+      } else {
+        try {
+          // Fetch user cart from database
+          const res = await fetch('/api/cart', {
+            method: 'GET',
+            headers: {
+              'Authorization': `Bearer ${token}`,
+            },
+          });
+          const data = await res.json();
+          if (!res.ok) {
+            throw new Error(data.message || 'Failed to fetch cart');
+          }
+
+          let loadedCart = data.data || [];
+
+          // Check if guest cart needs to be merged
+          const storedGuestCart = localStorage.getItem('cart_anonymous');
+          if (storedGuestCart) {
+            try {
+              const guestCart = JSON.parse(storedGuestCart);
+              if (guestCart && guestCart.length > 0) {
+                // Merge guest cart items into loadedCart
+                guestCart.forEach((guestItem) => {
+                  const existingIndex = loadedCart.findIndex(
+                    (item) => item.product._id === guestItem.product._id
+                  );
+                  if (existingIndex > -1) {
+                    const newQty = loadedCart[existingIndex].quantity + guestItem.quantity;
+                    const stockLimit = guestItem.product.stockCount ?? 999;
+                    loadedCart[existingIndex].quantity = Math.min(newQty, stockLimit);
+                  } else {
+                    loadedCart.push(guestItem);
+                  }
+                });
+
+                // Save merged cart to the backend immediately
+                const itemsToSave = loadedCart.map(item => ({
+                  product: item.product._id,
+                  quantity: item.quantity,
+                }));
+                await fetch('/api/cart', {
+                  method: 'POST',
+                  headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': `Bearer ${token}`,
+                  },
+                  body: JSON.stringify({ items: itemsToSave }),
+                });
+
+                // Clear guest cart from localStorage
+                localStorage.removeItem('cart_anonymous');
+              }
+            } catch (e) {
+              console.error('Failed to merge guest cart:', e);
+            }
+          }
+
+          setCart(loadedCart);
+          setLoadedUserId(currentUserId);
+          justLoadedRef.current = true;
+        } catch (err) {
+          console.error('Failed to load user cart:', err);
+          // Fallback to empty if error loading from backend
+          setCart([]);
+          setLoadedUserId(currentUserId);
+          justLoadedRef.current = true;
         }
       }
-    }
+    };
 
-    setCart(loadedCart);
-    setLoadedUserId(currentUserId);
-  }, [currentUserId, loadedUserId]);
+    fetchUserCart();
+  }, [currentUserId, loadedUserId, token]);
 
-  // Save cart items to localStorage on cart change, but only if loaded matches current
+  // Save cart items on cart change, but only if loaded matches current
   useEffect(() => {
-    if (loadedUserId === currentUserId) {
-      const userKey = currentUserId === 'anonymous' ? 'cart_anonymous' : `cart_user_${currentUserId}`;
-      localStorage.setItem(userKey, JSON.stringify(cart));
+    if (loadedUserId !== currentUserId) {
+      return;
     }
-  }, [cart, currentUserId, loadedUserId]);
+    if (justLoadedRef.current) {
+      justLoadedRef.current = false;
+      return;
+    }
+
+    if (currentUserId === 'anonymous') {
+      localStorage.setItem('cart_anonymous', JSON.stringify(cart));
+    } else if (token) {
+      const saveUserCart = async () => {
+        try {
+          const itemsToSave = cart.map((item) => ({
+            product: item.product._id,
+            quantity: item.quantity,
+          }));
+          await fetch('/api/cart', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+              'Authorization': `Bearer ${token}`,
+            },
+            body: JSON.stringify({ items: itemsToSave }),
+          });
+        } catch (err) {
+          console.error('Failed to save cart to backend:', err);
+        }
+      };
+      saveUserCart();
+    }
+  }, [cart, currentUserId, loadedUserId, token]);
 
   const addToCart = (product, quantity = 1) => {
     setCart((prevCart) => {
