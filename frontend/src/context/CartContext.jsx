@@ -11,6 +11,10 @@ export const CartProvider = ({ children }) => {
 
   // Load and merge cart items on user change
   useEffect(() => {
+    if (currentUserId === loadedUserId) {
+      return;
+    }
+
     const userKey = currentUserId === 'anonymous' ? 'cart_anonymous' : `cart_user_${currentUserId}`;
     let loadedCart = [];
 
@@ -55,7 +59,7 @@ export const CartProvider = ({ children }) => {
 
     setCart(loadedCart);
     setLoadedUserId(currentUserId);
-  }, [currentUserId]);
+  }, [currentUserId, loadedUserId]);
 
   // Save cart items to localStorage on cart change, but only if loaded matches current
   useEffect(() => {
