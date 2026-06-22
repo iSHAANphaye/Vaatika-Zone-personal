@@ -10,7 +10,7 @@ export default function HomePage({ onShopClick }) {
         {/* Background graphic */}
         <div className="absolute inset-0 opacity-15 mix-blend-overlay">
           <img
-            src="https://images.unsplash.com/photo-1566385101042-1a0aa0c1268c?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8ZnJlc2glMjB2ZWdldGFibGVzJTIwYW5kJTIwZnJ1aXRzfGVufDB8fDB8fHww"
+            src="https://images.unsplash.com/photo-1566385101042-1a0aa0c1268c?w=1600"
             alt="Fresh veggies background"
             className="w-full h-full object-cover"
           />

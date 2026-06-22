@@ -66,7 +66,7 @@ function AppContent() {
             &copy; 2026 Vaatika Zone. Sourced locally in Chhattisgarh. All rights reserved.
           </p>
           <p className="text-[10px] text-stone-500 mt-2 sm:mt-0">
-            Powered by Mongoose Custom Indexes (category_1_price_1 & text indices)
+            Fresh local produce. Delivered daily.
           </p>
         </div>
       </footer>

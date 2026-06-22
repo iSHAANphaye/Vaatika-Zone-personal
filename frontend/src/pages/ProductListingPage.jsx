@@ -308,7 +308,7 @@ export default function ProductListingPage({ onViewDetails }) {
             <div className="bg-red-50 border border-red-200 text-red-700 rounded-2xl p-6 text-center max-w-md mx-auto shadow-sm">
               <p className="font-semibold mb-2">Failed to load catalog</p>
               <p className="text-xs text-red-600 mb-6 leading-relaxed">
-                {error} (This is usually due to a temporary backend initialization delay. Please verify MongoDB is running and retry.)
+                Unable to load fresh inventory. Please check your network connection or try again.
               </p>
               <button
                 onClick={() => setRetryTrigger(prev => prev + 1)}
