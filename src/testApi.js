@@ -24,8 +24,8 @@ async function runApiTests() {
     let testOrderId = '';
 
     // --- TEST 1: Root / Health Check ---
-    console.log(`${yellow}[Test 1] GET / (Health Check)...${reset}`);
-    const healthRes = await fetch(`${BASE_URL}/`);
+    console.log(`${yellow}[Test 1] GET /api/health (Health Check)...${reset}`);
+    const healthRes = await fetch(`${BASE_URL}/api/health`);
     const healthData = await healthRes.json();
     if (healthRes.status === 200 && healthData.success) {
       console.log(`- Response: ${green}OK${reset} ("${healthData.message}")`);

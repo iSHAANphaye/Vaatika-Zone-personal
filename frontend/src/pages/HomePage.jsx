@@ -4,32 +4,32 @@ import { Leaf, ShieldCheck, Truck, MapPin, Users, ChevronRight, Sparkles, Sprout
 export default function HomePage({ onShopClick }) {
   return (
     <div className="animate-fade-in space-y-16 pb-16">
-      
+
       {/* HERO SECTION */}
       <section className="relative overflow-hidden bg-gradient-to-br from-emerald-800 via-emerald-900 to-stone-900 text-white py-24 px-4 sm:px-6 lg:px-8 shadow-xl">
         {/* Background graphic */}
         <div className="absolute inset-0 opacity-15 mix-blend-overlay">
-          <img 
-            src="https://images.unsplash.com/photo-1610348725531-843dff163e2c?w=1600&q=80" 
-            alt="Fresh veggies background" 
+          <img
+            src="https://images.unsplash.com/photo-1566385101042-1a0aa0c1268c?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8ZnJlc2glMjB2ZWdldGFibGVzJTIwYW5kJTIwZnJ1aXRzfGVufDB8fDB8fHww"
+            alt="Fresh veggies background"
             className="w-full h-full object-cover"
           />
         </div>
-        
+
         <div className="relative z-10 max-w-5xl mx-auto text-center">
           <div className="inline-flex items-center space-x-1.5 bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 px-4 py-1.5 rounded-full text-xs font-semibold tracking-wider uppercase mb-6 animate-pulse">
             <Sparkles className="h-3.5 w-3.5" />
             <span>Farm-To-Home Delivery in Chhattisgarh</span>
           </div>
-          
+
           <h1 className="text-4xl sm:text-6xl font-display font-black tracking-tight leading-none mb-6">
             Vaatika <span className="text-emerald-400">Zone</span>
           </h1>
-          
+
           <p className="text-lg sm:text-xl text-emerald-100/90 max-w-2xl mx-auto mb-10 leading-relaxed font-light">
             Sourcing the freshest fruits and organic vegetables from the farms of Raipur, Bhilai, and Durg, delivered straight to your kitchen within 24 hours of harvest.
           </p>
-          
+
           <div className="flex flex-col sm:flex-row justify-center gap-4">
             <button
               onClick={onShopClick}
@@ -71,8 +71,8 @@ export default function HomePage({ onShopClick }) {
               desc: "By eliminating middlemen, we pay fair wages directly to agricultural communities across Chhattisgarh."
             }
           ].map((item, idx) => (
-            <div 
-              key={idx} 
+            <div
+              key={idx}
               className="bg-white border border-stone-100 rounded-3xl p-8 hover:shadow-lg transition-all hover:-translate-y-1 duration-300"
             >
               <div className="bg-emerald-50 w-12 h-12 rounded-2xl flex items-center justify-center mb-6">
@@ -89,9 +89,9 @@ export default function HomePage({ onShopClick }) {
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div className="relative rounded-3xl overflow-hidden shadow-md aspect-video lg:aspect-square">
-            <img 
-              src="https://images.unsplash.com/photo-1595974482597-4b8da8879bc5?w=800&q=80" 
-              alt="Farmers in organic field" 
+            <img
+              src="https://images.unsplash.com/photo-1595974482597-4b8da8879bc5?w=800&q=80"
+              alt="Farmers in organic field"
               className="w-full h-full object-cover"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-emerald-950/70 via-transparent to-transparent flex items-end p-6">
@@ -188,7 +188,7 @@ export default function HomePage({ onShopClick }) {
               ))}
             </div>
           </div>
-          
+
           <div className="shrink-0 bg-gradient-to-br from-emerald-900 to-stone-900 text-white rounded-2xl p-8 max-w-xs md:max-w-sm w-full border border-emerald-800/30">
             <h3 className="font-display font-bold text-emerald-400 text-lg mb-4">The Vaatika Promise</h3>
             <ul className="space-y-4 text-xs text-stone-300">
@@ -292,8 +292,8 @@ export default function HomePage({ onShopClick }) {
               a: "No! In alignment with our organic values, we package all produce in eco-friendly paper bags and reusable cotton/jute delivery bags. You can hand back our delivery bags on your next order to reduce waste."
             }
           ].map((faq, idx) => (
-            <details 
-              key={idx} 
+            <details
+              key={idx}
               className="group bg-white border border-stone-100 rounded-2xl p-6 transition-all duration-300 [&_summary::-webkit-details-marker]:hidden cursor-pointer"
             >
               <summary className="flex items-center justify-between font-display font-bold text-stone-800 text-sm sm:text-base select-none cursor-pointer">
@@ -336,7 +336,7 @@ export default function HomePage({ onShopClick }) {
           </div>
         </div>
       </section>
-      
+
     </div>
   );
 }

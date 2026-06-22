@@ -30,7 +30,7 @@ const sendTokenResponse = (user, statusCode, res) => {
  */
 export const register = async (req, res, next) => {
   try {
-    const { name, email, password, role } = req.body;
+    const { name, email, password } = req.body;
 
     // 1. Check if email already exists
     const existingUser = await User.findOne({ email });
@@ -46,7 +46,7 @@ export const register = async (req, res, next) => {
       name,
       email,
       password,
-      role: role || 'customer',
+      role: 'customer',
     });
 
     // 3. Send response with JWT

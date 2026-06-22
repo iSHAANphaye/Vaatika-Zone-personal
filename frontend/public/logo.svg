@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100%" height="100%">
+  <!-- Rounded Green Square (emerald-600) -->
+  <rect x="0" y="0" width="100" height="100" rx="28" fill="#059669" />
+  
+  <!-- White Leaf Icon (scaled and centered) -->
+  <g transform="translate(18, 18) scale(2.66)" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none">
+    <path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 3.5 1 9.8a7 7 0 0 1-9 8.2z"/>
+    <path d="M9 22v-4h4"/>
+  </g>
+</svg>
