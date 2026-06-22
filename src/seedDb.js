@@ -30,10 +30,10 @@ const fruits = [
   { name: 'Mango (Aam)', basePrice: 150, desc: 'Sweet juicy mangoes, the king of fruits, popular in summer seasons.', image: 'https://images.unsplash.com/photo-1553279768-865429fa0078?w=500' },
   { name: 'Banana (Kela)', basePrice: 50, desc: 'Energizing sweet bananas, rich in potassium and sourced locally.', image: 'https://images.unsplash.com/photo-1571771894821-ce9b6c11b08e?w=500' },
   { name: 'Apple (Seb)', basePrice: 180, desc: 'Crisp and sweet Kashmiri red apples, highly nutritious.', image: 'https://images.unsplash.com/photo-1560806887-1e4cd0b6cbd6?w=500' },
-  { name: 'Papaya (Papita)', basePrice: 60, desc: 'Sweet orange papaya, rich in digestive enzymes and vitamins.', image: 'https://images.unsplash.com/photo-1526318896980-cf78c088247c?w=500' },
-  { name: 'Guava (Amrood)', basePrice: 70, desc: 'Fresh white/pink pulp guavas, sweet with a pinch of salt.', image: 'https://images.unsplash.com/photo-1534080391025-aa7c0835c24b?w=500' },
+  { name: 'Papaya (Papita)', basePrice: 60, desc: 'Sweet orange papaya, rich in digestive enzymes and vitamins.', image: 'https://images.unsplash.com/photo-1526318472351-c75fcf070305?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D' },
+  { name: 'Guava (Amrood)', basePrice: 70, desc: 'Fresh white/pink pulp guavas, sweet with a pinch of salt.', image: 'https://images.unsplash.com/photo-1693399991519-bef70bed19a2?q=80&w=688&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D' },
   { name: 'Watermelon (Tarbooj)', basePrice: 80, desc: 'Hydrating sweet red watermelons, perfect for hot Chhattisgarh summers.', image: 'https://images.unsplash.com/photo-1587049352846-4a222e784d38?w=500' },
-  { name: 'Pomegranate (Anar)', basePrice: 200, desc: 'Ruby red sweet pomegranate seeds, fresh and antioxidant-rich.', image: 'https://images.unsplash.com/photo-1601004890684-d8cbf643f5f2?w=500' },
+  { name: 'Pomegranate (Anar)', basePrice: 200, desc: 'Ruby red sweet pomegranate seeds, fresh and antioxidant-rich.', image: 'https://images.unsplash.com/photo-1541344999736-83eca272f6fc?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D' },
   { name: 'Grapes (Angoor)', basePrice: 100, desc: 'Sweet and seedless green grapes, juicy and fresh.', image: 'https://images.unsplash.com/photo-1537640538966-79f369143f8f?w=500' },
   { name: 'Orange (Santra)', basePrice: 120, desc: 'Citrusy sweet oranges, rich in Vitamin C and fiber.', image: 'https://images.unsplash.com/photo-1611080626919-7cf5a9dbab5b?w=500' },
 ];
